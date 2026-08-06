@@ -3,6 +3,7 @@ kind: Service
 
 metadata:
   name: brain-tasks-service
+  namespace: brain-tasks
 
 spec:
   type: LoadBalancer
