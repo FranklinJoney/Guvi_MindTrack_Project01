@@ -8,10 +8,16 @@ env:
 phases:
   pre_build:
     commands:
+      - echo "Current directory:"
+      - pwd
+      - echo "Repository contents:"
+      - ls -la
+      - echo "Dockerfile details:"
+      - ls -l Dockerfile
+      - cat Dockerfile
       - echo Logging in to Amazon ECR...
       - ACCOUNT_ID=$(aws sts get-caller-identity --query Account --output text)
       - aws ecr get-login-password --region $AWS_DEFAULT_REGION | docker login --username AWS --password-stdin $ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com
-
   build:
     commands:
       - echo Building Docker image...
