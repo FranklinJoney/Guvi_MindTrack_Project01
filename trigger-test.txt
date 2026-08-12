@@ -1,2 +1,2 @@
 trigger-test
-trigger-testpipeline trigger test
+trigger-testpipeline trigger testpipeline trigger test deploy
